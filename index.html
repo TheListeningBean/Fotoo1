@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal Memories for Zizi ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,500&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a0a0c;
+            --accent: #d4af37; /* Rose Gold / Gold */
+            --text-color: #f0f0f0;
+            --glass: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- BACKGROUND ANIMATION --- */
+        .stars-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a0c 100%);
+        }
+
+        .heart-particle {
+            position: absolute;
+            color: rgba(212, 175, 55, 0.2);
+            font-size: 10px;
+            animation: float 10s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* --- HERO SECTION --- */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .title-container h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-style: italic;
+            font-weight: 300;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            background: linear-gradient(to bottom, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-weight: 200;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* --- GALLERY SECTION --- */
+        .gallery {
+            padding: 100px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .photo-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 150px;
+            padding: 0 50px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+        }
+
+        .photo-item.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .photo-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .img-box {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            transition: transform 1.5s ease;
+            filter: grayscale(20%);
+        }
+
+        .photo-item:hover .img-box img {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
+
+        .content-box {
+            flex: 1;
+            padding: 0 80px;
+            z-index: 2;
+        }
+
+        .content-box h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .content-box p {
+            line-height: 1.8;
+            font-weight: 300;
+            opacity: 0.8;
+            border-left: 2px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        /* --- MUSIC PLAYER --- */
+        .music-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .music-control:hover {
+            background: rgba(212, 175, 55, 0.2);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.05));
+        }
+
+        footer h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 2.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .photo-item { flex-direction: column !important; padding: 0 20px; }
+            .content-box { padding: 40px 0; text-align: center; }
+            .content-box p { border-left: none; border-top: 2px solid var(--accent); padding: 20px 0; }
+            .img-box img { height: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+    <
+
+    <header>
+        <div class="title-container">
+            <p class="subtitle">Sebuah Arsip Kenangan</p>
+            <h1>Dafzi Gallery</h1>
+            <p class="subtitle">Foto foto favorit</p>
+        </div>
+    </header>
+
+    <div class="gallery">
+        <div class="photo-item">
+            <div class="img-box">
+                <img src="photo_14_2026-04-10_23-42-30.jpg" alt="Memori 1">
+            </div>
+            <div class="content-box">
+                <h2>Zizi abis ngambek, comel</h2>
+                <p>Ini jadi foto favorit karena si zizi kelihatan comel disini hihi</p>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <div class="img-box">
+                <img src="photo_16_2026-04-10_23-42-30.jpg" alt="Memori 2">
+            </div>
+            <div class="content-box">
+                <h2>Zizi MC</h2>
+                <p>Yess ini jugak jadi foto favorit aing, karena kecantikan si zizi bertambah disini sama seperti cintaku asekkkk</p>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <div class="img-box">
+                <img src="photo_2026-04-20_22-23-58.jpg" alt="Memori 3">
+            </div>
+            <div class="content-box">
+                <h2>Flings Coffee</h2>
+                <p>Ke mana pun langkah kaki membawa kita, selama ada kamu di sampingku, setiap tempat terasa seperti rumah.</p>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="photo-item">
+            <div class="img-box">
+                <img src="photo_21_2026-04-10_23-42-30.jpg" alt="Memori 3">
+            </div>
+            <div class="content-box">
+                <h2>Photobooth</h2>
+                <p>Ini jugak jadi foto favorit karena rasanya disini cocok bangettt</p>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <div class="img-box">
+                <img src="photo_22_2026-04-10_23-42-30.jpg" alt="Memori 2">
+            </div>
+            <div class="content-box">
+                <h2>Senyum Favorit</h2>
+                <p>Bagiku, tidak ada pemandangan yang lebih indah daripada melihatmu bahagia seperti ini. Kamu adalah karya seni yang paling nyata hihihih</p>
+            </div>
+        </div>
+
+        <div class="photo-item">
+            <div class="img-box">
+                <img src="photo_2026-04-20_22-24-25.jpg" alt="Memori 3">
+            </div>
+            <div class="content-box">
+                <h2>Samula coffee</h2>
+                <p>Foto favorit juga karena si Zizi cakep outfitnya hihihi</p>
+            </div>
+            </div>
+
+            <div class="photo-item">
+            <div class="img-box">
+                <img src="photo_30_2026-04-10_23-42-30.jpg" alt="Memori 3">
+            </div>
+            <div class="content-box">
+                <h2>Kakak kakak kantor</h2>
+                <p>Foto favorit juga karena si Zizi cakepp banget, kayak kakak kakak hahaha</p>
+            </div>
+        </div>
+
+        </div>
+
+    <footer>
+        <div>
+            <h2>"Terima kasih sudah menjadi bagian terindah dalam ceritaku."</h2>
+            <p style="margin-top:20px; opacity: 0.5;">Dibuat dengan sepenuh hati.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- ANIMASI PARTIKEL HATI ---
+        function createStars() {
+            const container = document.getElementById('stars');
+            for(let i=0; i<30; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-particle';
+                heart.innerHTML = '❤';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(heart);
+            }
+        }
+
+        // --- REVEAL ON SCROLL ---
+        function reveal() {
+            var reveals = document.querySelectorAll(".photo-item");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("reveal");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+
+        // --- MUSIC TOGGLE ---
+        const music = document.getElementById('bgMusic');
+        const icon = document.getElementById('musicIcon');
+        let playing = false;
+
+        function toggleMusic() {
+            if(!playing) {
+                music.play();
+                icon.innerHTML = '⏸';
+                playing = true;
+            } else {
+                music.pause();
+                icon.innerHTML = '🎵';
+                playing = false;
+            }
+        }
+
+        createStars();
+        reveal(); // Jalankan sekali di awal
+    </script>
+</body>
+</html>
